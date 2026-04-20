@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mirageinteractive.uk/sitemap.xml
+Sitemap: https://mirageinteractive.uk/sitemap-index.xml

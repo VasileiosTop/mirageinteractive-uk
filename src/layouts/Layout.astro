@@ -13,7 +13,7 @@ const {
   title = 'Mirage Interactive Ltd — Privacy-first AI software studio',
   description = 'Mirage Interactive is an independent software studio building on-device AI products for gamers and clinicians. Registered in England and Wales.',
   canonical = Astro.url.href,
-  ogImage = '/og-default.png',
+  ogImage = '/favicon.svg',
   noIndex = false,
 } = Astro.props;
 
@@ -27,8 +27,11 @@ const jsonLd = {
   description,
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '48 West George Street, Clyde Offices, 2nd Floor',
+    addressLocality: 'Glasgow',
+    postalCode: 'G2 1BP',
+    addressRegion: 'Scotland',
     addressCountry: 'GB',
-    addressRegion: 'England',
   },
   contactPoint: [
     {
