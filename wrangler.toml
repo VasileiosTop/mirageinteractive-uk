@@ -6,3 +6,12 @@ compatibility_date = "2026-04-01"
 directory = "./dist"
 binding = "ASSETS"
 run_worker_first = true
+
+# Product waitlists. Create the namespaces once with:
+#   npx wrangler kv namespace create WAITLIST_LUMEN
+#   npx wrangler kv namespace create WAITLIST_LUMEN --preview
+# then paste the returned IDs in place of the placeholders below.
+[[kv_namespaces]]
+binding = "WAITLIST_LUMEN"
+id = "REPLACE_WITH_PROD_KV_ID"
+preview_id = "REPLACE_WITH_PREVIEW_KV_ID"
