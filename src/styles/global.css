@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  body {
+    @apply bg-ink-950 text-ink-100 antialiased selection:bg-mi-400/30 selection:text-white;
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(170, 158, 130, 0.12), transparent),
+      radial-gradient(ellipse 70% 40% at 110% 30%, rgba(114, 99, 70, 0.08), transparent);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-mi-300 ring-offset-2 ring-offset-ink-950 rounded-sm;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-6 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+           bg-mi-300 px-6 py-3 text-sm font-semibold text-ink-950
+           transition hover:bg-mi-200 active:bg-mi-400
+           focus-visible:ring-mi-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full
+           border border-ink-700/80 bg-ink-900/60 px-6 py-3 text-sm font-semibold text-ink-100
+           transition hover:border-mi-300 hover:text-white;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-800/80 bg-ink-900/60 backdrop-blur-sm;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-mi-400/30
+           bg-mi-500/10 px-3 py-1 text-xs font-medium tracking-[0.14em] text-mi-200
+           uppercase;
+  }
+}

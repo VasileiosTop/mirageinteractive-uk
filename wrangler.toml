@@ -1,0 +1,8 @@
+name = "mirageinteractive-uk"
+main = "src/worker.ts"
+compatibility_date = "2026-04-01"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+run_worker_first = true

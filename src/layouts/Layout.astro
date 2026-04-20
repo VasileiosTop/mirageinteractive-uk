@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = 'Mirage Interactive Ltd — Privacy-first AI software studio',
+  description = 'Mirage Interactive is an independent software studio building on-device AI products for gamers and clinicians. Registered in England and Wales.',
+  canonical = Astro.url.href,
+  ogImage = '/og-default.png',
+  noIndex = false,
+} = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Mirage Interactive Ltd',
+  legalName: 'Mirage Interactive Ltd',
+  url: 'https://mirageinteractive.uk',
+  logo: 'https://mirageinteractive.uk/favicon.svg',
+  description,
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'GB',
+    addressRegion: 'England',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      email: 'contact@mirageinteractive.uk',
+      contactType: 'customer support',
+      areaServed: 'Worldwide',
+      availableLanguage: ['English'],
+    },
+  ],
+  founder: { '@type': 'Person', name: 'Vasileios Topouzis' },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    {noIndex && <meta name="robots" content="noindex,nofollow" />}
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:site_name" content="Mirage Interactive" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+
+    <meta name="theme-color" content="#0d0b08" />
+
+    <link rel="preconnect" href="https://rsms.me/" crossorigin />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

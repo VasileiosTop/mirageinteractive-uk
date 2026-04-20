@@ -1,0 +1,205 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+const products = [
+  {
+    slug: 'mirage-atlas',
+    status: 'In beta',
+    name: 'Mirage Atlas',
+    tagline: 'An offline AI companion for gacha players.',
+    body: "A 4-billion-parameter model running on-device, grounded in structured game knowledge. Plan banners, compare team comps, and ask questions without a single prompt leaving your phone. In beta for Neverness to Everness on iOS and Android.",
+    href: 'https://mirageatlas.com',
+    cta: 'mirageatlas.com',
+  },
+  {
+    slug: 'mirage-lumen',
+    status: 'In development',
+    name: 'Mirage Lumen',
+    tagline: 'Offline dental dictation for clinicians.',
+    body: 'A HIPAA-minded voice dictation tool that transcribes clinical notes with on-device Whisper and rewrites them with an on-device LLM. No patient audio leaves the device. In development for iOS and Android.',
+    href: null,
+    cta: 'Announcement coming',
+  },
+];
+
+const principles = [
+  {
+    title: 'Privacy is an architecture, not a promise.',
+    body: "We ship products where the user's data physically cannot reach us, because the server doesn't exist. Every Mirage product runs its inference on-device.",
+  },
+  {
+    title: 'Ship what you would pay for.',
+    body: "Independent studios earn the right to charge by being useful. We don't take outside investment, we don't run growth loops, and we don't subsidise free with data.",
+  },
+  {
+    title: 'Small, deep, credited.',
+    body: "We'd rather do one thing properly than ten things shallowly. Every dependency, every piece of community data, every borrowed idea is credited in-app.",
+  },
+];
+---
+
+<Layout>
+  <!-- Nav -->
+  <header class="absolute inset-x-0 top-0 z-20">
+    <nav class="container-page flex items-center justify-between py-6">
+      <a href="/" class="flex items-center gap-3 font-display text-lg font-semibold tracking-tight">
+        <span class="inline-block h-7 w-7 rounded-md bg-gradient-to-br from-mi-200 to-mi-700"></span>
+        <span>Mirage Interactive</span>
+      </a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#products" class="hidden text-ink-300 hover:text-white sm:inline">Products</a>
+        <a href="#principles" class="hidden text-ink-300 hover:text-white sm:inline">Principles</a>
+        <a href="#contact" class="text-mi-200 hover:text-white">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-32 pb-20 sm:pt-48 sm:pb-28">
+    <div class="container-page">
+      <span class="eyebrow animate-fade-up">Independent software studio · UK</span>
+      <h1 class="mt-8 max-w-3xl font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl animate-fade-up" style="animation-delay:60ms">
+        Software that answers for itself,
+        <span class="bg-gradient-to-r from-mi-100 via-mi-200 to-mi-400 bg-clip-text text-transparent">not for us.</span>
+      </h1>
+      <p class="mt-8 max-w-2xl text-lg leading-relaxed text-ink-200 animate-fade-up" style="animation-delay:120ms">
+        Mirage Interactive is an independent British software studio building on-device AI products for gamers and clinicians. We ship tools where inference runs on your hardware, so your data never leaves it.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-3 animate-fade-up" style="animation-delay:180ms">
+        <a href="#products" class="btn-primary">See what we're building</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="relative py-20">
+    <div class="container-page">
+      <div class="flex items-baseline justify-between gap-6">
+        <div>
+          <span class="eyebrow">Products</span>
+          <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">What we ship.</h2>
+        </div>
+      </div>
+
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
+        {products.map((p) => (
+          <article class="card flex h-full flex-col p-8">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border border-mi-400/30 bg-mi-500/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-mi-200">
+                {p.status}
+              </span>
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-semibold text-white">{p.name}</h3>
+            <p class="mt-1 text-sm text-mi-200">{p.tagline}</p>
+            <p class="mt-5 flex-1 text-sm leading-relaxed text-ink-300">{p.body}</p>
+            <div class="mt-8">
+              {p.href
+                ? (<a href={p.href} class="inline-flex items-center gap-2 font-mono text-sm text-mi-200 hover:text-white">
+                    {p.cta}
+                    <svg viewBox="0 0 24 24" class="h-4 w-4"><path fill="currentColor" d="m10 17 5-5-5-5v10Z"/></svg>
+                  </a>)
+                : (<span class="inline-flex items-center gap-2 font-mono text-sm text-ink-400">{p.cta}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section id="principles" class="relative py-24">
+    <div class="container-page">
+      <div class="max-w-2xl">
+        <span class="eyebrow">How we work</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Three principles, not a manifesto.</h2>
+      </div>
+
+      <dl class="mt-14 grid gap-10 md:grid-cols-3">
+        {principles.map((p, i) => (
+          <div>
+            <dt class="font-mono text-xs tracking-wider text-mi-300/80">0{i + 1}</dt>
+            <dd class="mt-3">
+              <h3 class="font-display text-xl font-semibold text-white">{p.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-ink-300">{p.body}</p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="relative py-24">
+    <div class="container-page">
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr]">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">We read every email.</h2>
+          <p class="mt-4 max-w-xl text-ink-300">
+            General enquiries, partnerships, and press go to <a href="mailto:contact@mirageinteractive.uk" class="text-mi-200 hover:text-white">contact@mirageinteractive.uk</a>.
+            Product-specific questions are best sent to each product's support address.
+          </p>
+        </div>
+
+        <ul class="space-y-4 text-sm">
+          <li class="card p-5">
+            <div class="font-semibold text-white">General &amp; press</div>
+            <a href="mailto:contact@mirageinteractive.uk" class="mt-1 block font-mono text-mi-200 hover:text-white">contact@mirageinteractive.uk</a>
+          </li>
+          <li class="card p-5">
+            <div class="font-semibold text-white">Mirage Atlas support</div>
+            <a href="mailto:support@mirageatlas.com" class="mt-1 block font-mono text-mi-200 hover:text-white">support@mirageatlas.com</a>
+          </li>
+          <li class="card p-5">
+            <div class="font-semibold text-white">Legal &amp; privacy</div>
+            <a href="mailto:legal@mirageinteractive.uk" class="mt-1 block font-mono text-mi-200 hover:text-white">legal@mirageinteractive.uk</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: company-of-record details -->
+  <footer class="border-t border-ink-800/80 py-12 mt-12">
+    <div class="container-page grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <div class="flex items-center gap-3 font-display text-lg font-semibold">
+          <span class="inline-block h-7 w-7 rounded-md bg-gradient-to-br from-mi-200 to-mi-700"></span>
+          <span>Mirage Interactive Ltd</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-ink-400">
+          A private company limited by shares, registered in England and Wales.
+        </p>
+        <dl class="mt-5 space-y-1 text-xs text-ink-500">
+          <div class="flex gap-2"><dt class="text-ink-400">Companies House No.</dt><dd class="font-mono" id="company-number">pending issuance</dd></div>
+          <div class="flex gap-2"><dt class="text-ink-400">Registered office</dt><dd>England, United Kingdom</dd></div>
+          <div class="flex gap-2"><dt class="text-ink-400">VAT</dt><dd>not currently VAT-registered</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white">Explore</h4>
+        <ul class="mt-4 space-y-2 text-sm text-ink-400">
+          <li><a href="#products" class="hover:text-white">Products</a></li>
+          <li><a href="#principles" class="hover:text-white">Principles</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white">Policies</h4>
+        <ul class="mt-4 space-y-2 text-sm text-ink-400">
+          <li><a href="/privacy" class="hover:text-white">Privacy</a></li>
+          <li><a href="/terms" class="hover:text-white">Terms</a></li>
+          <li><a href="mailto:legal@mirageinteractive.uk" class="hover:text-white">Data requests</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-page mt-12 flex flex-col gap-3 border-t border-ink-800/80 pt-6 text-xs text-ink-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; 2026 Mirage Interactive Ltd. All rights reserved.</p>
+      <p>Built in the United Kingdom.</p>
+    </div>
+  </footer>
+</Layout>
