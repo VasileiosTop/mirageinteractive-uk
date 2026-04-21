@@ -1,6 +1,7 @@
 {
   "name": "mirageinteractive-uk",
   "version": "0.1.0",
+  "description": "Two products: Mirage Atlas for gamers, Mirage Lumen for clinicians. Both run on your device, not ours.",
   "private": true,
   "type": "module",
   "scripts": {

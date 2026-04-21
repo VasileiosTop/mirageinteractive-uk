@@ -1,6 +1,6 @@
 # mirageinteractive.uk
 
-Company website for **Mirage Interactive Ltd**, an independent British software studio.
+Company website for Mirage Interactive Ltd. Two products: Mirage Atlas and Mirage Lumen.
 
 ## Stack
 

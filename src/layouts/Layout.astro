@@ -10,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = 'Mirage Interactive Ltd — Privacy-first AI software studio',
-  description = 'Mirage Interactive is an independent software studio building on-device AI products for gamers and clinicians. Registered in England and Wales.',
+  title = 'Mirage',
+  description = 'Two products: Mirage Atlas for gamers, Mirage Lumen for clinicians. Both run on your device, not ours.',
   canonical = Astro.url.href,
   ogImage = '/favicon.svg',
   noIndex = false,
@@ -22,6 +22,7 @@ const jsonLd = {
   '@type': 'Organization',
   name: 'Mirage Interactive Ltd',
   legalName: 'Mirage Interactive Ltd',
+  alternateName: 'Mirage',
   url: 'https://mirageinteractive.uk',
   logo: 'https://mirageinteractive.uk/favicon.svg',
   description,
@@ -64,12 +65,14 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
-    <meta property="og:site_name" content="Mirage Interactive" />
+    <meta property="og:image:alt" content="Mirage" />
+    <meta property="og:site_name" content="Mirage" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta name="twitter:image:alt" content="Mirage" />
 
     <meta name="theme-color" content="#0d0b08" />
 
