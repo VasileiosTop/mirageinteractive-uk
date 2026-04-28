@@ -32,16 +32,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           bg-mi-300 px-6 py-3 text-sm font-semibold text-ink-950
-           transition hover:bg-mi-200 active:bg-mi-400
-           focus-visible:ring-mi-200;
+    @apply inline-flex items-center justify-center rounded-full
+           bg-[#FBF9F3] text-[#0A0907] px-5 py-2.5 text-sm font-medium
+           transition hover:bg-[#FBF9F3]/90;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full
-           border border-ink-700/80 bg-ink-900/60 px-6 py-3 text-sm font-semibold text-ink-100
-           transition hover:border-mi-300 hover:text-white;
+    @apply inline-flex items-center justify-center rounded-full
+           border border-[#FBF9F3]/20 text-[#FBF9F3]/90 px-5 py-2.5 text-sm font-medium
+           transition hover:border-[#FBF9F3]/40 hover:text-[#FBF9F3];
   }
 
   .card {
@@ -49,8 +48,6 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-mi-400/30
-           bg-mi-500/10 px-3 py-1 text-xs font-medium tracking-[0.14em] text-mi-200
-           uppercase;
+    @apply text-[0.8125rem] font-semibold tracking-[0.2em] text-[#C9A34F] uppercase;
   }
 }
