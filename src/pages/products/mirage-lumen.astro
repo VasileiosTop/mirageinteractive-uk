@@ -78,11 +78,18 @@ const faqSchema = {
       <p>In development for iOS and Android. Join the waitlist to hear when it ships.</p>
     </div>
 
+    <div
+      id="form-error"
+      hidden
+      role="alert"
+      class="mt-10 max-w-md rounded-md border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-200"
+    ></div>
+
     <form
       id="waitlist"
       method="POST"
       action="/api/waitlist/lumen"
-      class="mt-10 max-w-md space-y-4"
+      class="mt-6 max-w-md space-y-4"
     >
       <div>
         <label for="email" class="block text-sm text-ink-300">Email</label>
@@ -109,6 +116,8 @@ const faqSchema = {
         Email only. No tracking. Delete anytime by emailing <a href="mailto:legal@mirageinteractive.uk" class="text-mi-200 hover:text-white">legal@mirageinteractive.uk</a>.
       </p>
     </form>
+
+    <script src="/form-error.js" defer is:inline></script>
 
     <section class="mt-20 max-w-2xl">
       <span class="eyebrow">What it does</span>

@@ -15,3 +15,21 @@ run_worker_first = true
 binding = "WAITLIST_LUMEN"
 id = "fc33a3d824e045948b8286f176bce4fc"
 preview_id = "cc467aab81794548a9bd31579d83e71a"
+
+# Secrets — set with `wrangler secret put <NAME>`. Not stored in this file.
+#
+# Required:
+#   WAITLIST_HMAC_SECRET
+#     Used to derive KV keys and sign confirm/delete tokens. Generate once
+#     with: openssl rand -base64 32
+#     The waitlist endpoint will refuse writes if this is unset.
+#
+# Optional:
+#   TURNSTILE_SECRET_KEY
+#     If present, the worker validates a Cloudflare Turnstile token on each
+#     submission. Pair with the public site key wired into the Lumen form
+#     (see src/pages/products/mirage-lumen.astro).
+#
+#   RESEND_API_KEY
+#     Transactional email provider for double-opt-in. If absent, the worker
+#     auto-confirms entries on submit (see src/lib/email.ts).
