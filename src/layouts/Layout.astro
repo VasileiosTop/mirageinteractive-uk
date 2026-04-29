@@ -78,14 +78,15 @@ const jsonLd = {
 
     <meta name="theme-color" content="#0d0b08" />
 
-    <link rel="preconnect" href="https://rsms.me/" crossorigin />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <script defer data-domain="mirageinteractive.uk" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
+    <a
+      href="#main"
+      class="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:left-3 focus-visible:top-3 focus-visible:z-50 focus-visible:rounded-md focus-visible:bg-[#FBF9F3] focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm focus-visible:font-semibold focus-visible:text-[#0A0907] focus-visible:shadow-lg focus-visible:outline-none"
+    >Skip to content</a>
     <slot />
   </body>
 </html>
