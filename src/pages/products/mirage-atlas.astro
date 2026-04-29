@@ -1,0 +1,109 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Mirage Atlas',
+  description:
+    'An offline AI companion for gacha players. Plan banners, compare team comps, and ask anything about your game — all on your phone, nothing sent anywhere. In beta for Neverness to Everness on iOS and Android.',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'iOS, Android',
+  url: 'https://mirageinteractive.uk/products/mirage-atlas',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mirage Interactive Ltd',
+    url: 'https://mirageinteractive.uk',
+  },
+};
+---
+
+<Layout
+  title="Mirage Atlas — Offline AI companion for gacha players"
+  description="An offline AI companion for gacha players. Plan banners, compare team comps, and ask anything about your game — all on your phone, nothing sent anywhere. In beta for Neverness to Everness."
+  canonical="https://mirageinteractive.uk/products/mirage-atlas"
+>
+  <main class="container-page py-20">
+    <a href="/" class="text-sm text-ink-400 hover:text-white">&larr; Home</a>
+
+    <div class="mt-10">
+      <span class="eyebrow">In beta</span>
+      <h1 class="mt-6 font-display text-4xl font-bold text-white sm:text-5xl">Mirage Atlas</h1>
+      <p class="mt-3 text-mi-200">An offline AI companion for gacha players.</p>
+    </div>
+
+    <div class="mt-10 max-w-2xl space-y-5 text-ink-200">
+      <p>Plan banners, compare team comps, and ask anything about your game — all on your phone, nothing sent anywhere.</p>
+      <p>Atlas is in beta for <em>Neverness to Everness</em> on iOS and Android. Pulls, builds, and event guides happen on-device, so you can use it on a plane, at a tournament, or anywhere your data plan stops working.</p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href="https://mirageatlas.com" class="btn-primary">Try the beta &rarr;</a>
+      <a href="#privacy" class="btn-ghost">How it stays offline</a>
+    </div>
+
+    <section id="privacy" class="mt-20">
+      <span class="eyebrow">Privacy &amp; data</span>
+      <h2 class="mt-4 font-display text-3xl font-bold text-white">What goes where.</h2>
+      <div class="mt-8 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-ink-800">
+              <th class="py-3 pr-4 text-left font-semibold text-white">Data</th>
+              <th class="py-3 text-left font-semibold text-white">Leaves your device?</th>
+            </tr>
+          </thead>
+          <tbody class="text-ink-200">
+            <tr class="border-b border-ink-800/60">
+              <td class="py-3 pr-4">Your questions to the assistant</td>
+              <td class="py-3">No. Inference runs on your device.</td>
+            </tr>
+            <tr class="border-b border-ink-800/60">
+              <td class="py-3 pr-4">Pulls, builds, and account data</td>
+              <td class="py-3">No. Stored locally.</td>
+            </tr>
+            <tr class="border-b border-ink-800/60">
+              <td class="py-3 pr-4">Game data updates</td>
+              <td class="py-3">Pulled from us when you choose to update. Nothing about your account is sent back.</td>
+            </tr>
+            <tr class="border-b border-ink-800/60">
+              <td class="py-3 pr-4">Crash reports</td>
+              <td class="py-3">Anonymous, opt-in only.</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">Usage analytics</td>
+              <td class="py-3">None. The app does not phone home.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-20 max-w-2xl">
+      <span class="eyebrow">Hardware</span>
+      <h2 class="mt-4 font-display text-3xl font-bold text-white">Recent phones.</h2>
+      <p class="mt-6 text-ink-200">
+        Optimised for recent iPhones and Android devices. The beta works on phones a few generations old; older devices may run the assistant more slowly.
+      </p>
+    </section>
+
+    <section class="mt-20 max-w-2xl">
+      <span class="eyebrow">Affiliation</span>
+      <h2 class="mt-4 font-display text-3xl font-bold text-white">Independent of the game.</h2>
+      <p class="mt-6 text-ink-200">
+        Mirage Atlas is fan-built. It is not affiliated with, endorsed by, sponsored by, or specifically approved by the publishers of <em>Neverness to Everness</em>. Game names and assets remain the property of their respective owners.
+      </p>
+    </section>
+
+    <section class="mt-20 max-w-2xl">
+      <p class="text-ink-200">
+        The product site lives at <a href="https://mirageatlas.com" class="text-mi-200 hover:text-white">mirageatlas.com</a> — install links, release notes, and the support address.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://mirageatlas.com" class="btn-primary">Try the beta &rarr;</a>
+      </div>
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  </main>
+</Layout>
