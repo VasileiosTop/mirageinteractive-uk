@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/Layout.astro';
+---
+
+<Layout
+  title="Verify on-device — Mirage"
+  description="How to verify the on-device claim for Mirage Atlas and Mirage Lumen yourself, without trusting our marketing copy."
+  canonical="https://mirageinteractive.uk/verify"
+>
+  <main id="main" class="container-page py-20">
+    <a href="/" class="text-sm text-ink-400 hover:text-white">&larr; Home</a>
+
+    <div class="mt-10 max-w-2xl">
+      <span class="eyebrow">Verify</span>
+      <h1 class="mt-6 font-display text-4xl font-bold text-white sm:text-5xl">Don't take our word for it.</h1>
+      <p class="mt-6 text-ink-200">
+        The studio's first principle is that privacy is architecture, not policy. That only works if the architecture is verifiable. This page is how to check that our products do what we say they do — without trusting our marketing copy.
+      </p>
+    </div>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">The claim, restated</h2>
+      <p class="mt-4 text-ink-200">
+        Both Mirage Atlas and Mirage Lumen run inference on your device. Audio (Lumen), questions and pulls (Atlas), templates, and notes are processed locally. Nothing is sent to a Mirage server while you use the app. The only network calls the apps make are when you choose to download an update or a template pack from us.
+      </p>
+    </section>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">How to check it yourself</h2>
+      <p class="mt-4 text-ink-200">
+        Pick whichever tool matches the device you're testing on. Each one shows you, at a different layer, what the app is actually doing on the network.
+      </p>
+      <ul class="mt-6 space-y-4 text-ink-200">
+        <li>
+          <strong class="font-semibold text-white">Airplane mode.</strong>
+          The simplest test. Launch the app with the phone in airplane mode. If a feature works, it isn't using the network.
+        </li>
+        <li>
+          <strong class="font-semibold text-white">Little Snitch (macOS) or LuLu (macOS, free).</strong>
+          Mirror your phone or run the app under emulation; both block outbound connections by default and prompt you for each.
+        </li>
+        <li>
+          <strong class="font-semibold text-white">Wireshark + a local network bridge.</strong>
+          Put your phone on a Wi-Fi network you control; capture all traffic from your phone's IP while you use the app.
+        </li>
+        <li>
+          <strong class="font-semibold text-white">mitmproxy.</strong>
+          Trust mitmproxy's CA on the device, route through it, and inspect everything the app sends — TLS contents and all.
+        </li>
+        <li>
+          <strong class="font-semibold text-white">iOS &amp; Android system tools.</strong>
+          On iOS, Settings → Cellular → scroll to per-app data usage. On Android, Settings → Network &amp; internet → Data usage by app. Coarse, but a quick sanity check.
+        </li>
+      </ul>
+    </section>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">What you should see</h2>
+      <ul class="mt-6 space-y-3 text-ink-200">
+        <li>No connections to <code class="font-mono text-sm text-mi-200">mirageinteractive.uk</code> or product subdomains during normal use.</li>
+        <li>No connections to <code class="font-mono text-sm text-mi-200">plausible.io</code>, <code class="font-mono text-sm text-mi-200">cloudflare.com</code>, or any analytics host. Plausible only runs on this website, not in the apps.</li>
+        <li>No connections to OpenAI, Anthropic, Google AI, or any other model-hosting provider.</li>
+        <li>If you triggered an update check or a template-pack download, you should see a connection to a CDN we publish to. That's the only outbound traffic we ever ask for.</li>
+      </ul>
+    </section>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">If you find something we missed</h2>
+      <p class="mt-4 text-ink-200">
+        If you ever see a connection that contradicts what's on this page, please tell us at <a href="mailto:legal@mirageinteractive.uk" class="text-mi-200 hover:text-white">legal@mirageinteractive.uk</a> with the timestamp and the host you observed. We'll investigate and either explain it or fix it. Either way you'll get a written response within a week.
+      </p>
+    </section>
+
+    <section class="mt-16 max-w-2xl">
+      <p class="text-sm text-ink-400">
+        This page applies once a product has shipped — Mirage Atlas in beta, Mirage Lumen at launch. The studio website itself uses Plausible Analytics, documented in the <a href="/privacy" class="text-mi-200 hover:text-white">privacy policy</a>.
+      </p>
+    </section>
+  </main>
+</Layout>

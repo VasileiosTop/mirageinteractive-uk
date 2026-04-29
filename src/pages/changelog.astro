@@ -1,0 +1,58 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+interface Entry {
+  date: string; // ISO yyyy-mm-dd
+  scope: 'Site' | 'Mirage Atlas' | 'Mirage Lumen' | 'Studio';
+  body: string;
+}
+
+// Most recent first. Keep entries terse — one or two sentences. Major
+// product release notes belong in each product's own changelog (inside
+// the app or on its product site); this page is a studio-level log of
+// shipped work that's worth a public note.
+const entries: Entry[] = [
+  {
+    date: '2026-04-29',
+    scope: 'Site',
+    body: 'New product depth on the Mirage Lumen page (templates, regulatory posture, FAQ). Hardened the waitlist endpoint with hashed KV keys, signed confirm/delete tokens, and inline form errors. Internal hub added for Mirage Atlas at /products/mirage-atlas.',
+  },
+  {
+    date: '2026-04-26',
+    scope: 'Site',
+    body: 'Brand v4 — wordmark and asset library wired in. Hero rewritten to lead with the on-device thesis. Privacy disclosure updated to reflect the analytics provider actually in use.',
+  },
+];
+---
+
+<Layout
+  title="Changelog — Mirage"
+  description="Public log of work shipped on mirageinteractive.uk and the studio's products. Most recent first."
+  canonical="https://mirageinteractive.uk/changelog"
+>
+  <main id="main" class="container-page py-20">
+    <a href="/" class="text-sm text-ink-400 hover:text-white">&larr; Home</a>
+
+    <div class="mt-10 max-w-2xl">
+      <span class="eyebrow">Changelog</span>
+      <h1 class="mt-6 font-display text-4xl font-bold text-white sm:text-5xl">What we shipped.</h1>
+      <p class="mt-6 text-ink-200">
+        A public log of substantive work on the studio site and the products. Most recent first. Updated when there's something to say, not on a schedule.
+      </p>
+    </div>
+
+    <ol class="mt-16 space-y-12 max-w-3xl">
+      {entries.map((entry) => (
+        <li>
+          <div class="flex flex-wrap items-baseline gap-3">
+            <time datetime={entry.date} class="font-mono text-sm text-mi-300/80">{entry.date}</time>
+            <span class="rounded-full border border-mi-400/30 bg-mi-500/10 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-mi-200">
+              {entry.scope}
+            </span>
+          </div>
+          <p class="mt-3 text-ink-200">{entry.body}</p>
+        </li>
+      ))}
+    </ol>
+  </main>
+</Layout>

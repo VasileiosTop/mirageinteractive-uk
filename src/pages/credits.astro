@@ -1,0 +1,46 @@
+---
+import Layout from '~/layouts/Layout.astro';
+---
+
+<Layout
+  title="Credits — Mirage"
+  description="Open-source software, datasets, and community work that mirageinteractive.uk and our products are built on."
+  canonical="https://mirageinteractive.uk/credits"
+>
+  <main id="main" class="container-page py-20">
+    <a href="/" class="text-sm text-ink-400 hover:text-white">&larr; Home</a>
+
+    <div class="mt-10 max-w-2xl">
+      <span class="eyebrow">Credits</span>
+      <h1 class="mt-6 font-display text-4xl font-bold text-white sm:text-5xl">Small, deep, credited.</h1>
+      <p class="mt-6 text-ink-200">
+        Our third principle says we'd rather do one thing properly than ten shallowly, and that we credit the libraries, datasets, and community work we build on. This page is the studio-level credit list. Each product also ships its own open-source acknowledgements screen — that's where the per-product, per-version attributions live, including the on-device models we run.
+      </p>
+    </div>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">This website</h2>
+      <ul class="mt-6 space-y-3 text-ink-200">
+        <li><strong class="font-semibold text-white">Astro</strong> — the static site framework that builds the pages you're reading.</li>
+        <li><strong class="font-semibold text-white">Tailwind CSS</strong> — the design tokens and utility classes that make the UI consistent.</li>
+        <li><strong class="font-semibold text-white">Inter</strong> — the typeface, by Rasmus Andersson. Self-hosted via @fontsource-variable/inter.</li>
+        <li><strong class="font-semibold text-white">Cloudflare Pages &amp; Workers</strong> — where the site is built, hosted, and served from. The waitlist endpoint runs at the edge; nothing else does.</li>
+        <li><strong class="font-semibold text-white">Plausible Analytics</strong> — privacy-friendly analytics, no cookies, no IP storage.</li>
+      </ul>
+    </section>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">The products</h2>
+      <p class="mt-4 text-ink-200">
+        Mirage Atlas and Mirage Lumen each carry their own attribution screen inside the app, listing every open-source project, dataset, and model they ship with — including the version we shipped. That's the canonical place. We keep it inside the app rather than on this page so it stays accurate to the build you actually have.
+      </p>
+    </section>
+
+    <section class="mt-16 max-w-2xl">
+      <h2 class="font-display text-2xl font-semibold text-white">Found a missing credit?</h2>
+      <p class="mt-4 text-ink-200">
+        Email <a href="mailto:contact@mirageinteractive.uk" class="text-mi-200 hover:text-white">contact@mirageinteractive.uk</a> and we'll fix it. Attribution failures matter — both legally and ethically — and we'd rather correct them than be defensive about them.
+      </p>
+    </section>
+  </main>
+</Layout>
