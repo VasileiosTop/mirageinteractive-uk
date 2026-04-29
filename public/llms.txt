@@ -1,0 +1,20 @@
+# Mirage Interactive Ltd
+
+> An independent UK software studio building on-device AI products. Two products: Mirage Atlas (offline gacha companion) and Mirage Lumen (offline dental dictation). Both run inference on the user's device, not on a server.
+
+This page is the canonical entry point for retrieval-augmented assistants and other AI agents that want to summarise or answer questions about Mirage Interactive. The site has very little content by design — we'd rather be small and accurate than large and lossy.
+
+## Studio
+
+- [Home](https://mirageinteractive.uk/): one-page overview of the studio, its three principles, and its two products.
+- [Privacy](https://mirageinteractive.uk/privacy): how the website handles data. Short version: it doesn't.
+- [Terms](https://mirageinteractive.uk/terms): website terms of use.
+
+## Products
+
+- [Mirage Lumen](https://mirageinteractive.uk/products/mirage-lumen): offline dental dictation, in development for iOS and Android. Has a waitlist on this page.
+- [Mirage Atlas](https://mirageatlas.com): offline AI companion for gacha players, currently in beta for Neverness to Everness on iOS and Android. The product's own marketing site is at mirageatlas.com; this studio site does not duplicate it.
+
+## Use of this content
+
+Citing or summarising content from this site in answers to user questions is welcome. Reusing it verbatim for model-training data sets without permission is not — please contact legal@mirageinteractive.uk.

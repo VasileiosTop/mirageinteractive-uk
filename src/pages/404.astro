@@ -1,0 +1,22 @@
+---
+import Layout from '~/layouts/Layout.astro';
+---
+
+<Layout
+  title="Not found — Mirage"
+  description="That page doesn't exist on mirageinteractive.uk."
+  canonical="https://mirageinteractive.uk/404"
+  noIndex={true}
+>
+  <main class="container-page py-32">
+    <span class="eyebrow">404</span>
+    <h1 class="mt-6 font-display text-4xl font-bold text-white sm:text-6xl">Nothing here.</h1>
+    <p class="mt-6 max-w-xl text-ink-300">
+      The page you were looking for either moved, was retired, or never existed. If you followed a link from somewhere, we'd appreciate a note at <a href="mailto:contact@mirageinteractive.uk" class="text-mi-200 hover:text-white">contact@mirageinteractive.uk</a> so we can fix it.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href="/" class="btn-primary">← Home</a>
+      <a href="/products/mirage-lumen" class="btn-ghost">Mirage Lumen</a>
+    </div>
+  </main>
+</Layout>
